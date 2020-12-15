@@ -27,10 +27,10 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-a0af88a2041174bc481b.js"
+    "url": "webpack-runtime-a91a837e7c048e905d7d.js"
   },
   {
-    "url": "styles.545c6b15c8a4cc7c72bc.css"
+    "url": "styles.5ef600cbe477004dec32.css"
   },
   {
     "url": "styles-bc72ca78f9bad9fb1f45.js"
@@ -39,11 +39,11 @@ self.__precacheManifest = [
     "url": "framework-83e11af5cf111be5ad89.js"
   },
   {
-    "url": "app-5820c6a22c04ddcca770.js"
+    "url": "app-3c84e1b46463a1978bfb.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "1d851763ebad8402f929d35a182241d8"
+    "revision": "232516c35914a3041e99f6b67290d4be"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-82c63c4c056f62a6fe2f.js"
@@ -54,7 +54,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "9e07c3e91a688421d423ba3af6c4a094"
+    "revision": "1903d021ddc375cddf46f11bb7ab103b"
   },
   {
     "url": "polyfill-a0c9186328768889dad2.js"
@@ -144,12 +144,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/Deep-Learning-Control-with-Embedded-Physical-Structure`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-5820c6a22c04ddcca770.js`))) {
+  if (!resources || !(await caches.match(`/Deep-Learning-Control-with-Embedded-Physical-Structure/app-3c84e1b46463a1978bfb.js`))) {
     return await fetch(event.request)
   }
 
@@ -162,7 +162,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/Deep-Learning-Control-with-Embedded-Physical-Structure/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
